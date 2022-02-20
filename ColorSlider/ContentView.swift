@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var redSliderValue = Double.random(in: 0...255)
-    @State private var greenSliderValue = Double.random(in: 0...255)
-    @State private var blueSliderValue = Double.random(in: 0...255)
+    @State private var redSliderValue: Double = 64
+    @State private var greenSliderValue: Double = 128
+    @State private var blueSliderValue: Double = 200
     
-    //private var myColor = Color.init(red: 0.1, green: 0, blue: 0)
     var body: some View {
         VStack{
             ColorView(color: .init(Color.RGBColorSpace.sRGB,
@@ -23,16 +22,15 @@ struct ContentView: View {
             
             HStack{
                 ColorSlider(value: $redSliderValue, lineColor: .red)
-                //ColorTextField(textField: $sliderValue)
-                    //передать в текстовое поле
+                ColorTextField(textField: $redSliderValue)
             }
             HStack{
                 ColorSlider(value: $greenSliderValue, lineColor: .green)
-//                ColorTextField()
+                ColorTextField(textField: $greenSliderValue)
             }
             HStack{
                 ColorSlider(value: $blueSliderValue, lineColor: .blue)
-//                ColorTextField()
+                ColorTextField(textField: $blueSliderValue)
             }
         }
     }

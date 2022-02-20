@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ColorTextField: View {
-    @Binding var textField: String
+    @Binding var textField: Double
     var body: some View {
-        TextField("", text: $textField)
+        TextField("", value: $textField, format: .number)
             .frame(width: 45, height: 30)
             .textFieldStyle(.roundedBorder)
             .keyboardType(.numberPad)
