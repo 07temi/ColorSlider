@@ -16,6 +16,12 @@ struct ColorTextField: View {
             .keyboardType(.numberPad)
             .padding(.trailing)
     }
+    private func checkValue() -> Double {
+        if textField > 255 {
+           textField = 255
+        }
+        return textField
+    }
 }
 
 //struct ColorTextField_Previews: PreviewProvider {
