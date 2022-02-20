@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ColorSlider: View {
     @Binding var value: Double
-    //@State private var sliderValue = Double.random(in: 0...255)
     let lineColor: Color
     
     var body: some View {
