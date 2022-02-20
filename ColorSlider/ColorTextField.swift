@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColorTextField: View {
     @Binding var textField: Double
+    
     var body: some View {
         TextField("", value: $textField, format: .number)
             .frame(width: 45, height: 30)
@@ -16,12 +17,12 @@ struct ColorTextField: View {
             .keyboardType(.numberPad)
             .padding(.trailing)
     }
-    private func checkValue() -> Double {
-        if textField > 255 {
-           textField = 255
-        }
-        return textField
-    }
+//    private func checkValue() -> Double {
+//        if textField > 255 {
+//           textField = 255
+//        }
+//        return textField
+//    }
 }
 
 //struct ColorTextField_Previews: PreviewProvider {

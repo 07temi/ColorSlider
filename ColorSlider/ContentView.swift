@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var redSliderValue: Double = 64
     @State private var greenSliderValue: Double = 128
     @State private var blueSliderValue: Double = 200
+    @State private var showAlert = false
     
     var body: some View {
         VStack{
@@ -23,18 +24,40 @@ struct ContentView: View {
             HStack{
                 ColorSlider(value: $redSliderValue, lineColor: .red)
                 ColorTextField(textField: $redSliderValue)
+                    .onSubmit {
+                        redSliderValue = checkValue(value: redSliderValue)
+                    }
+                    .alert("error", isPresented: $showAlert) {
+                        Button("Ok", action: {} )
+                    } message: {
+                        Text("out of range")
+                    }
             }
             HStack{
                 ColorSlider(value: $greenSliderValue, lineColor: .green)
                 ColorTextField(textField: $greenSliderValue)
+                    .onSubmit {
+                        greenSliderValue = checkValue(value: greenSliderValue)
+                    }
             }
             HStack{
                 ColorSlider(value: $blueSliderValue, lineColor: .blue)
                 ColorTextField(textField: $blueSliderValue)
+                    .onSubmit {
+                        blueSliderValue = checkValue(value: blueSliderValue)
+                    }
             }
         }
     }
+    
+    private func checkValue(value: Double) -> Double {
+        if value > 255 {
+            showAlert.toggle()
+        }
+        return 255
+    }
 }
+
 
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
