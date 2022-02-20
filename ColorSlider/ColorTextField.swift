@@ -18,9 +18,3 @@ struct ColorTextField: View {
             .padding(.trailing)
     }
 }
-
-//struct ColorTextField_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ColorTextField()
-//    }
-//}

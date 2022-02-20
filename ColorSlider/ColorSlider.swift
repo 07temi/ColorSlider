@@ -13,18 +13,11 @@ struct ColorSlider: View {
     
     var body: some View {
         HStack{
-            Text("0")
+            Text("\(lround(value))")
+                .frame(width: 40, alignment: .leading)
             Slider(value: $value, in: 0...255, step: 1)
                 .accentColor(lineColor)
-            
-            Text("255")
         }
         .padding(.horizontal)
     }
 }
-
-//struct Slider_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ColorSlider(setColor: .blue)
-//    }
-//}
