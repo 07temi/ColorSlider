@@ -13,13 +13,10 @@ struct ColorView: View {
         Rectangle()
             .frame(height: 100)
             .foregroundColor(color)
+            .cornerRadius(20)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.white, lineWidth: 5))
             .padding()
-        
     }
 }
-
-//struct ColorView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ColorView(color: .red)
-//    }
-//}

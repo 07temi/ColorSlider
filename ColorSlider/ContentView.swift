@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var showAlert = false
     
     var body: some View {
+        ZStack{
+            Color.init(red: 0, green: 0.4, blue: 0.7)
+                .ignoresSafeArea()
         VStack{
             ColorView(color: .init(Color.RGBColorSpace.sRGB,
                                    red: redSliderValue / 255,
@@ -49,6 +52,7 @@ struct ContentView: View {
             }
         }
     }
+    }
     
     private func checkValue(value: Double) -> Double {
         if value > 255 {
@@ -59,8 +63,8 @@ struct ContentView: View {
 }
 
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
